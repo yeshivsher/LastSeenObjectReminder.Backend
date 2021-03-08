@@ -1,0 +1,21 @@
+{
+  "name": "LastSeenObjectReminder.Backend",
+  "version": "1.0.0",
+  "description": "Back End side of final DL project.",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start-nodemon": "nodemon server.js",
+    "start": "node server.js"
+  },
+  "repository": "https://github.com/yeshivsher/LastSeenObjectReminder.Backend",
+  "author": "Yeshivsher",
+  "license": "MIT",
+  "dependencies": {
+    "express": "^4.17.1",
+    "node-fetch": "^2.6.0"
+  },
+  "devDependencies": {
+    "nodemon": "^1.19.2"
+  }
+}
