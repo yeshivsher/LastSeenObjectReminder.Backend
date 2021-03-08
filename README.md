@@ -2,5 +2,5 @@
 Back End side of final DL project.
 
 ## Installation
-yarn install
-yarn start
+* yarn install
+* yarn start
