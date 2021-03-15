@@ -25,7 +25,7 @@ const initRestApiServer = () => {
 
         const result = await serverApi.GetLastSeenImage(time)
         res.send(result)
-    }) 
+    })
 
     app.post('/X', jsonParser, async (req, res) => {
         let newCamera = req.body

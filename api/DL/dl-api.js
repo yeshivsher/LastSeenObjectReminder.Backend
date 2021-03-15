@@ -1,9 +1,16 @@
-const getIsObjectInTheImageOrNot = (clientId) => {
+const extractFrames = require('ffmpeg-extract-frames')
 
+const getIsObjectInTheImageOrNot = (clientId) => {
 }
 
-const InitCurrentImageSaver = () => {
-
+const InitCurrentImageSaver = async () => {
+    await extractFrames({
+        input: '../../video/testVideo.mp4',
+        output: './currentImage-%i.jpg',
+        offsets: [
+            1000
+        ]
+    })
 }
 
 

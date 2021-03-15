@@ -1,6 +1,6 @@
 const serverRestApi = require('./api/WebApi/server-rest-api')
-const dlApi = require('./api/DL/dl-api')
+const cameraService = require('./api/service/camera-service')
 
 // Init servers.
-dlApi.InitCurrentImageSaver()
+cameraService.InitCurrentImageSaver()
 serverRestApi.initRestApiServer()
