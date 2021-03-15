@@ -42,7 +42,7 @@ const initRestApiServer = () => {
 
     // Init server. 
     app.listen(port, '0.0.0.0', () => {
-        console.log('Server listening on port', port)
+        console.log('Rest api server listening on port', port)
     })
 }
 

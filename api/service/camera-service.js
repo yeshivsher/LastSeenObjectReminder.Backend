@@ -13,9 +13,11 @@ const InitCurrentImageSaver = async () => {
   setInterval(async () => {
     let f = await c.readFrame()
     fs.writeFileSync('./image/currentImage/tmp.png', f.data)
+
+    console.log('Capture...')
   }, SECONDS_CUPTURE * 1000)
 
-  console.log('Save image each ' + SECONDS_CUPTURE + ' seconds')
+  console.log('\nSave image each ' + SECONDS_CUPTURE + ' seconds\nOutput: image/currentImage/tmp.png\n\n')
 }
 
 module.exports = { InitCurrentImageSaver }

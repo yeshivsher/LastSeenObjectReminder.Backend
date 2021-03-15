@@ -1,5 +1,3 @@
-const extractFrames = require('ffmpeg-extract-frames')
-
 const getIsObjectInTheImageOrNot = (clientId) => {
 }
 

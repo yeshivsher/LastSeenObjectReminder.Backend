@@ -14,7 +14,8 @@
   "dependencies": {
     "camera-capture": "^0.0.11",
     "express": "^4.17.1",
-    "node-fetch": "^2.6.0"
+    "node-fetch": "^2.6.0",
+    "puppeteer": "^8.0.0"
   },
   "devDependencies": {
     "nodemon": "^1.19.2"
