@@ -14,9 +14,7 @@
   "dependencies": {
     "camera-capture": "^0.0.11",
     "express": "^4.17.1",
-    "ffmpeg-extract-frames": "^2.0.2",
-    "node-fetch": "^2.6.0",
-    "puppeteer": "^8.0.0"
+    "node-fetch": "^2.6.0"
   },
   "devDependencies": {
     "nodemon": "^1.19.2"
