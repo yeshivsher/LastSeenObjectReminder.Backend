@@ -2,9 +2,9 @@ const getIsObjectInTheImageOrNot = (clientId) => {
 
 }
 
-const getIsObjectInTheImageOrNot = (clientId) => {
+const InitCurrentImageSaver = () => {
 
 }
 
 
-module.exports = { getIsObjectInTheImageOrNot }
+module.exports = { InitCurrentImageSaver, getIsObjectInTheImageOrNot }

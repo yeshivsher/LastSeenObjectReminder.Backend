@@ -20,12 +20,12 @@ app.use(function (req, res, next) {
 })
 
 const initRestApiServer = () => {
-    app.get('/X/:clientId', async (req, res) => {
-        let clientId = req.params.clientId
+    app.get('/api/:time', async (req, res) => {
+        let time = req.params.time
 
-        const result = await serverApi.GetLastSeenImage(clientId)
+        const result = await serverApi.GetLastSeenImage(time)
         res.send(result)
-    })
+    }) 
 
     app.post('/X', jsonParser, async (req, res) => {
         let newCamera = req.body

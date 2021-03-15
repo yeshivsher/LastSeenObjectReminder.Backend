@@ -16,22 +16,25 @@ const checkNoContentResponse = async response => {
 }
 
 const GetLastSeenImage = async time => {
-    let query = url + "/X/" + time;
+    let query = url + "/X/" + time
+    let currentTime =  new Date()
 
-    return new Promise(async (resolve, reject) => {
-        let result = {};
+    return "the current time is: " + currentTime.toLocaleTimeString()
 
-        fetch(query)
-            .then(checkNoContentResponse)
-            .then(data => {
-                result = data;
-                resolve(result);
-            })
-            .catch(e => {
+    // return new Promise(async (resolve, reject) => {
+    //     let result = {};
 
-                reject(result);
-            });
-    });
+    //     fetch(query)
+    //         .then(checkNoContentResponse)
+    //         .then(data => {
+    //             result = data;
+    //             resolve(result);
+    //         })
+    //         .catch(e => {
+
+    //             reject(result);
+    //         });
+    // });
 };
 
 module.exports = {
