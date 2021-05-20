@@ -6,6 +6,7 @@ const pjson = require('../../package.json');
 const jsonParser = bodyParser.json()
 const app = express()
 const port = config.generalConfig.port
+const fetch = require("node-fetch");
 
 app.use(function (req, res, next) {
     res.header('Access-Control-Allow-Origin', '*')
@@ -20,10 +21,22 @@ app.use(function (req, res, next) {
 })
 
 const initRestApiServer = () => {
-    app.get('/api/:time', async (req, res) => {
+    app.get('/api/currenttime/:time', async (req, res) => {
         let time = req.params.time
 
         const result = await serverApi.GetLastSeenImage(time)
+        res.send(result)
+    })
+
+    app.get('/api/lastseenimagebycattegoryname/:cattegoryname', async (req, res) => {
+        let cattegoryName = req.params.cattegoryname
+
+        const result = await serverApi.GetLastseenimagebycattegoryname(cattegoryName)
+        res.send(result)
+    })
+
+    app.get('/api/noimage', async (req, res) => {
+        const result = await serverApi.getNoImage('../../image/no-image.png')
         res.send(result)
     })
 

@@ -1,5 +1,14 @@
 const fetch = require("node-fetch");
 const config = require("../../config");
+const cameraService = require('../../api/service/camera-service')
+var fs = require('fs');
+
+const options = {
+    string: true,
+    headers: {
+      "User-Agent": "my-app"
+    }
+  };
 
 const url = config.generalConfig.url;
 
@@ -7,6 +16,7 @@ const NO_CONTENT_STATUS_CODE = 204
 
 //####################################################
 // helper functions
+
 const checkNoContentResponse = async response => {
     if (response.status === NO_CONTENT_STATUS_CODE) {
         return []
@@ -15,28 +25,25 @@ const checkNoContentResponse = async response => {
     }
 }
 
-const GetLastSeenImage = async time => {
-    let query = url + "/X/" + time
-    let currentTime =  new Date()
+const GetLastseenimagebycattegoryname = async cattegoryName => {
+    let result = {}
+    const url = `/../../image/lastSeenImages/${cattegoryName}.png`
 
-    return "the current time is: " + currentTime.toLocaleTimeString()
+    result = cameraService.base64_encode(__dirname + url)
 
-    // return new Promise(async (resolve, reject) => {
-    //     let result = {};
-
-    //     fetch(query)
-    //         .then(checkNoContentResponse)
-    //         .then(data => {
-    //             result = data;
-    //             resolve(result);
-    //         })
-    //         .catch(e => {
-
-    //             reject(result);
-    //         });
-    // });
+    return result 
 };
 
+const getNoImage = async (path) => {
+    let result = {}
+    const url = '/../../image/no-image.png'
+    
+    result = cameraService.base64_encode(__dirname + url)
+
+    return result // "cGF0aC90by9maWxlLmpwZw=="
+}
+
 module.exports = {
-    GetLastSeenImage
+    GetLastseenimagebycattegoryname,
+    getNoImage
 }
