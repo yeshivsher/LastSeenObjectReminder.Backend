@@ -14,8 +14,11 @@
   "dependencies": {
     "camera-capture": "^0.0.11",
     "express": "^4.17.1",
+    "form-data": "^4.0.0",
     "googleapis": "39",
+    "jimp": "^0.16.1",
     "node-fetch": "^2.6.0",
+    "node-webcam": "^0.8.0",
     "puppeteer": "^8.0.0"
   },
   "devDependencies": {
