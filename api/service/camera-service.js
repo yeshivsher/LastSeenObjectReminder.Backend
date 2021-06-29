@@ -77,11 +77,11 @@ const preperDlRequest = (cameraId) => {
       fetch(query, { method: 'POST', Headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ "cameraId": cameraId, "image": base64Image }) })
         .then(checkNoContentResponse)
         .then(res => {
-          console.log(res)
+          // console.log(res)
           resolve(res);
         })
         .catch(e => {
-          console.log(e)
+          // console.log(e)
         });
     }, 1000) //wait ten seconds before continuing
   });
@@ -96,8 +96,8 @@ const InitCurrentImageSaver = async () => {
       if (data) {
         preperDlRequest(1)
       } else {
-        console.log('err')
-        console.log(err)
+        // console.log('err')
+        // console.log(err)
       }
     });
 
@@ -112,8 +112,8 @@ const InitCurrentImageSaver = async () => {
       if (data) {
         preperDlRequest(2)
       } else {
-        console.log('err')
-        console.log(err)
+        // console.log('err')
+        // console.log(err)
       }
     });
   }, SECONDS_CUPTURE * 1000)
