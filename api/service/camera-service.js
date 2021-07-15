@@ -67,13 +67,10 @@ const preperDlRequest = (cameraId) => {
     image.resize(1280, 720)            // resize
       .quality(60)                 // set JPEG quality
       .write(imageOutputName); // save
-
     setTimeout(() => {
       imageOutputName = "compresed" + cameraId + ".jpg";
-      
       let base64Image = base64_encode(imageOutputName)
-      let query = "http://84.108.172.125:7000/Identification/";
-   
+      let query = "http://127.0.0.1:8000/Identification/";
       fetch(query, { method: 'POST', Headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ "cameraId": cameraId, "image": base64Image }) })
         .then(checkNoContentResponse)
         .then(res => {
